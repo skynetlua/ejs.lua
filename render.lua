@@ -152,6 +152,9 @@ return function(get_res, options, mode)
             ret = ret..tostring(str)
         end
         env.escape = function(txt)
+            if type(txt) ~= "string" then
+               return txt 
+            end
             return txt:gsub("&", '&amp;'):gsub("<", '&lt;'):gsub(">", '&gt;'):gsub("'", '&#39;'):gsub('"', '&quot;')
         end
         env.partial = function(path1, env1)
