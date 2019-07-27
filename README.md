@@ -7,7 +7,12 @@ Embedded lua templates.
   * Escapes html by default with `<%= code %>`
   * Unescaped buffering with `<%- code %>`
   * Includes
-  * Client-side support
+  
+## Notice
+```
+ <%- value %>   =>  <% echo(value) %>
+ <%= value %>   =>  <% echo(escape(value)) %>
+```
 
 ## Example
 
@@ -15,7 +20,13 @@ Embedded lua templates.
 	<div class='navbar'>
     	<h3><%= helloworld() %></h3>
 	</div>
+	
+	//or
+	<div class='navbar'>
+    	<h3><% echo(escape(helloworld())) %></h3>
+	</div>
 ---
+
 
 ```
 	<% if topic then %>
