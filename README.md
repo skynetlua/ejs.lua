@@ -11,7 +11,7 @@ Embedded lua templates.
 ## Notice
 ```
  <%- value %>   =>  <% echo(value) %>
- <%= value %>   =>  <% echo(escape(value)) %>
+ <%= value %>   =>  <% escape(echo(value)) %>
 ```
 
 ## Example
